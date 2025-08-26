@@ -4,7 +4,9 @@
   box-sizing: border-box;
   margin: 0;
 }
-
+#root {
+  width: 100%;
+}
 html {
   /* --main-color: whitesmoke; */
 }
@@ -17,4 +19,19 @@ h2 {
 
 h1 {
   font-size: 4rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+
+  background-color: aliceblue;
 }
