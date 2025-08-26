@@ -2,7 +2,7 @@ import type { ReactElement } from "react";
 
 export const Header = (): ReactElement => {
   return (
-    <header>
+    <header className="header">
       <h1>Todo list</h1>
     </header>
   );
