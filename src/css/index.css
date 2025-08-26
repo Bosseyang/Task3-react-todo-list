@@ -1,3 +1,6 @@
-@import url("App.css");
 @import url("base.css");
 @import url("Header.css");
+@import url("TodoItem.css");
+@import url("AddTodo.css");
+@import url("TodoList.css");
+@import url("Button.css");
