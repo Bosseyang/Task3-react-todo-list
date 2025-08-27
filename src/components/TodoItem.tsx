@@ -2,6 +2,13 @@ import type { FC } from "react";
 import type { ITodo } from "../types";
 
 export const TodoItem: FC<{ todo: ITodo }> = ({ todo }) => {
+interface ITodoItemProps {
+  todo: ITodo;
+  onToggle: (id: string) => void;
+  onRemove: (id: string) => void;
+  onEdit: (id: string, text: string) => void;
+  onMove: (id: string, direction: "up" | "down") => void;
+}
   return (
     <li className="todo-item">
       <p className={`todo-text-p`}>{todo.text}</p>
