@@ -16,12 +16,35 @@ export const TodoItem: React.FC<ITodoItemProps> = ({
   onEdit,
   onMove,
 }) => {
+  const [isEditing, setIsEditing] = useState(false);
+  const handleEdit = () => {
+    if (isEditing) {
+      onEdit(todo.id, editText);
+    }
+    setIsEditing(!isEditing);
+  };
   return (
     <li className="todo-item">
       <p className={`todo-text-p`}>{todo.text}</p>
       <p className="author-p">
         By {todo.author} | {todo.timestamp.toLocaleString()}
       </p>
+      <div className="todo-wrapper">
+        {isEditing ? (
+          <input
+            className="input-text"
+            value={editText}
+            onChange={(e) => setEditText(e.target.value)}
+          />
+        ) : (
+          <span className={todo.completed ? "line-through" : ""}>
+            {todo.text}
+          </span>
+        )}
+        <div className="author-time-text">
+          By {todo.author} | {todo.timestamp.toLocaleString()}
+        </div>
+      </div>
     </li>
   );
 };
