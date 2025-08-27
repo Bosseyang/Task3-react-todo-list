@@ -9,6 +9,13 @@ interface ITodoItemProps {
   onEdit: (id: string, text: string) => void;
   onMove: (id: string, direction: "up" | "down") => void;
 }
+export const TodoItem: React.FC<ITodoItemProps> = ({
+  todo,
+  onToggle,
+  onRemove,
+  onEdit,
+  onMove,
+}) => {
   return (
     <li className="todo-item">
       <p className={`todo-text-p`}>{todo.text}</p>
