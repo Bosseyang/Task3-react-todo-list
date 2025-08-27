@@ -59,6 +59,9 @@ export const TodoItem: React.FC<ITodoItemProps> = ({
             </span>
           )}
         </button>
+        <button className="button edit-button" onClick={handleEdit}>
+          {isEditing ? "Save" : "Edit"}
+        </button>
       </div>
     </li>
   );
