@@ -45,6 +45,21 @@ export const TodoItem: React.FC<ITodoItemProps> = ({
           By {todo.author} | {todo.timestamp.toLocaleString()}
         </div>
       </div>
+
+      <div className="todo-controls">
+        <button
+          className="todo-completed-button"
+          onClick={() => onToggle(todo.id)}
+        >
+          {todo.completed ? (
+            "Undo"
+          ) : (
+            <span className="material-symbols-outlined">
+              check_box_outline_blank
+            </span>
+          )}
+        </button>
+      </div>
     </li>
   );
 };
