@@ -74,6 +74,12 @@ export const TodoItem: React.FC<ITodoItemProps> = ({
         >
           <span className="material-symbols-outlined">arrow_upward</span>
         </button>
+        <button
+          className="button arrow-down-button"
+          onClick={() => onMove(todo.id, "down")}
+        >
+          <span className="material-symbols-outlined">arrow_downward</span>
+        </button>
       </div>
     </li>
   );
