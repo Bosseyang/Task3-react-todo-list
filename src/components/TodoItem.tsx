@@ -62,6 +62,12 @@ export const TodoItem: React.FC<ITodoItemProps> = ({
         <button className="button edit-button" onClick={handleEdit}>
           {isEditing ? "Save" : "Edit"}
         </button>
+        <button
+          className="button remove-button"
+          onClick={() => onRemove(todo.id)}
+        >
+          <span className="material-symbols-outlined">delete</span>
+        </button>
       </div>
     </li>
   );
