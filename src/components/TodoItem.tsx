@@ -1,7 +1,6 @@
-import type { FC } from "react";
+import { useState } from "react";
 import type { ITodo } from "../types";
 
-export const TodoItem: FC<{ todo: ITodo }> = ({ todo }) => {
 interface ITodoItemProps {
   todo: ITodo;
   onToggle: (id: string) => void;
@@ -9,6 +8,7 @@ interface ITodoItemProps {
   onEdit: (id: string, text: string) => void;
   onMove: (id: string, direction: "up" | "down") => void;
 }
+
 export const TodoItem: React.FC<ITodoItemProps> = ({
   todo,
   onToggle,
@@ -17,6 +17,8 @@ export const TodoItem: React.FC<ITodoItemProps> = ({
   onMove,
 }) => {
   const [isEditing, setIsEditing] = useState(false);
+  const [editText, setEditText] = useState(todo.text);
+
   const handleEdit = () => {
     if (isEditing) {
       onEdit(todo.id, editText);
@@ -25,10 +27,6 @@ export const TodoItem: React.FC<ITodoItemProps> = ({
   };
   return (
     <li className="todo-item">
-      <p className={`todo-text-p`}>{todo.text}</p>
-      <p className="author-p">
-        By {todo.author} | {todo.timestamp.toLocaleString()}
-      </p>
       <div className="todo-wrapper">
         {isEditing ? (
           <input
@@ -48,13 +46,15 @@ export const TodoItem: React.FC<ITodoItemProps> = ({
 
       <div className="todo-controls">
         <button
-          className="todo-completed-button"
+          className="button todo-completed-button"
           onClick={() => onToggle(todo.id)}
         >
           {todo.completed ? (
-            "Undo"
+            <span className="check-box material-symbols-outlined">
+              check_box
+            </span>
           ) : (
-            <span className="material-symbols-outlined">
+            <span className="check-box-blank material-symbols-outlined">
               check_box_outline_blank
             </span>
           )}
