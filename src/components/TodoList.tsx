@@ -38,7 +38,17 @@ export const TodoList: React.FC = () => {
           Sort by Author
         </button>
       </div>
+
+      <ul className="todo-items-list ul">
         {todos.map((todo) => (
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            onToggle={toggleTodo}
+            onRemove={removeTodo}
+            onEdit={editTodo}
+            onMove={moveTodo}
+          />
         ))}
       </ul>
     </section>
