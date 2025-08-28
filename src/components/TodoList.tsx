@@ -2,6 +2,7 @@ import React from "react";
 import { AddTodo } from "./AddTodo";
 import { TodoItem } from "./TodoItem";
 import { useTodos } from "../useTodos";
+import { SortButton } from "./SortButton";
 
 export const TodoList: React.FC = () => {
   const {
@@ -13,30 +14,17 @@ export const TodoList: React.FC = () => {
     moveTodo,
     sortBy,
     setSortBy,
+    setTodos,
   } = useTodos();
 
   return (
     <section className="todo-list">
       <AddTodo onAdd={addTodo} />
-      <h2 className="h2 todos">Todos</h2>
+      {/* <h2 className="h2 todos">Todos</h2> */}
 
       <div className="sort-wrapper">
-        <button
-          className={`button sort-date-button ${
-            sortBy === "timestamp" ? "gray1" : "gray2"
-          }`}
-          onClick={() => setSortBy("timestamp")}
-        >
-          Sort by Date
-        </button>
-        <button
-          className={`button sort-author-button ${
-            sortBy === "author" ? "gray1" : "gray2"
-          }`}
-          onClick={() => setSortBy("author")}
-        >
-          Sort by Author
-        </button>
+        <SortButton sortType="date" sortBy={sortBy} setSortBy={setSortBy} setTodos={setTodos} />
+        <SortButton sortType="author" sortBy={sortBy} setSortBy={setSortBy} setTodos={setTodos} />
       </div>
 
       <ul className="todo-items-list ul">
