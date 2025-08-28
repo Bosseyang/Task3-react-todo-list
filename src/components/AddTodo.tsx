@@ -19,7 +19,7 @@ export const AddTodo: React.FC<IAddTodoProps> = ({ onAdd }) => {
       text,
       author,
       completed: false,
-      timestamp: new Date(),
+      date: new Date(),
     });
 
     setText("");
