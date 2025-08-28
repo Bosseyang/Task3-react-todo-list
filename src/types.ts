@@ -3,5 +3,5 @@ export interface ITodo {
   text: string;
   completed: boolean;
   author: string;
-  timestamp: Date;
+  date: Date;
 }
