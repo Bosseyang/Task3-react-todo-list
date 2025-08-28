@@ -1,3 +1,44 @@
 .todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.137);
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+
+  padding: 1rem;
+  gap: 1rem;
+
   width: 80%;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.todo-controls-wrapper {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-input-text {
+  min-width: 380px;
+  max-width: 380px;
+
+  min-height: 25px;
+  max-height: 60px;
+}
+
+.todo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 1rem;
+}
+
+.author-time-text {
+  color: rgba(0, 0, 0, 0.65);
+  padding-top: 0.5rem;
 }
