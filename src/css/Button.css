@@ -1,8 +1,10 @@
 .button {
   border-radius: 0.3rem;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 0px solid rgba(0, 0, 0, 0.5);
   box-shadow: 5px 3px 3px rgba(0, 0, 0, 0.4);
 
+  width: 36px;
+  height: 36px;
   padding: 0.3rem;
 }
 .button:hover {
@@ -11,5 +13,32 @@
 }
 
 .button:active {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.button.sort-date-button,
+.button.sort-author-button {
+  width: 100px;
+}
+
+.button.add-todo-button {
+  width: 80px;
+}
+
+.button.gray1 {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.button.gray2 {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.button.gray1:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.button.gray2:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.2);
 }
