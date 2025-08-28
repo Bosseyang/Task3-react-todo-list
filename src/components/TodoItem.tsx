@@ -42,8 +42,31 @@ export const TodoItem: React.FC<ITodoItemProps> = ({
             </span>
           )}
         </button>
+        <div className="todo-text-wrapper">
+          {isEditing ? (
+            <textarea
+              className="edit-input-text"
+              value={editText}
+              onChange={(e) => setEditText(e.target.value)}
+            />
+          ) : (
+            <span className={todo.completed ? "line-through" : ""}>
+              {todo.text}
+            </span>
+          )}
+          <div className="author-time-text">
+            By {todo.author} | {todo.timestamp.toLocaleString()}
+          </div>
+        </div>
+      </div>
+
+      <div className="todo-controls-wrapper">
         <button className="button edit-button" onClick={handleEdit}>
-          {isEditing ? "Save" : "Edit"}
+          {isEditing ? (
+            "Save"
+          ) : (
+            <span className="material-symbols-outlined">edit</span>
+          )}
         </button>
         <button
           className="button remove-button"
