@@ -28,23 +28,6 @@ export const TodoItem: React.FC<ITodoItemProps> = ({
   return (
     <li className="todo-item">
       <div className="todo-wrapper">
-        {isEditing ? (
-          <input
-            className="input-text"
-            value={editText}
-            onChange={(e) => setEditText(e.target.value)}
-          />
-        ) : (
-          <span className={todo.completed ? "line-through" : ""}>
-            {todo.text}
-          </span>
-        )}
-        <div className="author-time-text">
-          By {todo.author} | {todo.timestamp.toLocaleString()}
-        </div>
-      </div>
-
-      <div className="todo-controls">
         <button
           className="button todo-completed-button"
           onClick={() => onToggle(todo.id)}
