@@ -1,7 +1,7 @@
 .todo-list {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: top;
   align-items: center;
 
   background-color: rgba(187, 187, 187, 0.39);
@@ -11,9 +11,11 @@
   padding: 1rem;
   gap: 1rem;
   width: 900px;
+  height: 85vh;
+
+  overflow-y: scroll;
+  scrollbar-width: thin;
 }
-
-
 
 .sort-wrapper {
   display: flex;
