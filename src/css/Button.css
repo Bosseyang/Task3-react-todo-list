@@ -1,31 +1,60 @@
 .button {
-  border-radius: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 5px;
   border: 0px solid rgba(0, 0, 0, 0.5);
   box-shadow: 5px 3px 3px rgba(0, 0, 0, 0.4);
+  background-color: transparent;
+  font-variation-settings: "opsz" 48;
+  /* font-size: 48px; */
+}
 
+.todo-controls-wrapper .button {
   width: 36px;
   height: 36px;
   padding: 0.3rem;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 1);
+}
+
+.button.todo-checkbox-button {
+  box-shadow: none;
+}
+
+.button.todo-checkbox-button:hover {
+  background-color: transparent;
+  color: black;
+  font-variation-settings: "FILL" 0;
 }
 .button:hover {
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 1);
+  color: lightgray;
+  font-variation-settings: "FILL" 1;
 }
 
 .button:active {
   background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.4rem;
 }
 
 .button.sort-date-button,
 .button.sort-author-button {
   width: 100px;
+  padding: 0.4rem;
+  border: 1px solid rgba(0, 0, 0, 0);
 }
 
 .button.add-todo-button {
   width: 80px;
+  padding: 0.4rem;
 }
 
 .button.gray1 {
+  width: 100px;
+  padding: 0.4rem;
   background-color: rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
