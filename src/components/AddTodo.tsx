@@ -43,7 +43,7 @@ export const AddTodo: React.FC<IAddTodoProps> = ({ onAdd }) => {
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
         />
-        <button className="button add-todo-btn" type="submit">
+        <button className="button add-todo-button" type="submit">
           Add Todo
         </button>
       </form>
