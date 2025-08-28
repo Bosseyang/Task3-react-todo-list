@@ -10,4 +10,22 @@
 
   padding: 1rem;
   gap: 1rem;
+  width: 900px;
+}
+
+
+
+.sort-wrapper {
+  display: flex;
+  gap: 2rem;
+}
+
+.todo-items-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  padding: 1rem;
+  gap: 1rem;
 }
