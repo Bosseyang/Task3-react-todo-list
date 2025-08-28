@@ -4,7 +4,7 @@ import { loadTodos, saveTodos } from "./storage";
 
 export const useTodos = () => {
   const [todos, setTodos] = useState<ITodo[]>([]);
-  const [sortBy, setSortBy] = useState<"timestamp" | "author">("timestamp");
+  const [sortBy, setSortBy] = useState<"date" | "author" | null>("date");
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -31,7 +31,8 @@ export const useTodos = () => {
   const editTodo = (id: string, text: string) =>
     setTodos((prev) => prev.map((t) => (t.id === id ? { ...t, text } : t)));
 
-  const moveTodo = (id: string, direction: "up" | "down") =>
+  const moveTodo = (id: string, direction: "up" | "down") => {
+    setSortBy(null);
     setTodos((prev) => {
       const index = prev.findIndex((t) => t.id === id);
       if (index === -1) return prev;
@@ -49,19 +50,27 @@ export const useTodos = () => {
           newTodos[index + 1],
         ];
       }
+
       return newTodos;
     });
+  };
 
-  const sortedTodos = [...todos].sort((a, b) => {
-    if (sortBy === "timestamp") {
-      return b.timestamp.getTime() - a.timestamp.getTime();
-    } else {
-      return a.author.localeCompare(b.author);
-    }
-  });
+  // const getTodos = () => {
+  //   console.log(sortBy);
+  //   if (sortBy) {
+  //     return [...todos].sort((a, b) => {
+  //       if (sortBy === "timestamp") {
+  //         return b.timestamp.getTime() - a.timestamp.getTime();
+  //       } else {
+  //         return a.author.localeCompare(b.author);
+  //       }
+  //     });
+  //   }
+  //   return todos;
+  // };
 
   return {
-    todos: sortedTodos,
+    todos,
     addTodo,
     toggleTodo,
     removeTodo,
@@ -69,5 +78,6 @@ export const useTodos = () => {
     moveTodo,
     sortBy,
     setSortBy,
+    setTodos,
   };
 };
