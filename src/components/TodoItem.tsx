@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { ITodo } from "../types";
+import { TodoItemControls } from "./TodoItemControls";
 
 interface ITodoItemProps {
   todo: ITodo;
@@ -53,20 +54,13 @@ export const TodoItem: React.FC<ITodoItemProps> = ({
         </div>
       </div>
 
-      <div className="todo-controls-wrapper">
-        <button className="button edit-button" onClick={handleEdit}>
-          {isEditing ? "Save" : <span className="material-symbols-outlined">edit</span>}
-        </button>
-        <button className="button remove-button" onClick={() => onRemove(todo.id)}>
-          <span className="material-symbols-outlined">delete</span>
-        </button>
-        <button className="button arrow-up-button" onClick={() => onMove(todo.id, "up")}>
-          <span className="material-symbols-outlined">arrow_upward</span>
-        </button>
-        <button className="button arrow-down-button" onClick={() => onMove(todo.id, "down")}>
-          <span className="material-symbols-outlined">arrow_downward</span>
-        </button>
-      </div>
+      <TodoItemControls
+        todoId={todo.id}
+        isEditing={isEditing}
+        onEditToggle={handleEdit}
+        onRemove={onRemove}
+        onMove={onMove}
+      />
     </li>
   );
 };
