@@ -18,27 +18,27 @@ export const useTodos = () => {
     }
   }, [todos, isLoaded]);
 
-  const addTodo = (todo: ITodo) => setTodos((prev) => [...prev, todo]);
+  const addTodo = (todo: ITodo) => setTodos((list) => [...list, todo]);
 
   const toggleTodo = (id: string) =>
-    setTodos((prev) => prev.map((t) => (t.id === id ? { ...t, completed: !t.completed } : t)));
+    setTodos((list) => list.map((t) => (t.id === id ? { ...t, completed: !t.completed } : t)));
 
-  const removeTodo = (id: string) => setTodos((prev) => prev.filter((t) => t.id !== id));
+  const removeTodo = (id: string) => setTodos((list) => list.filter((t) => t.id !== id));
 
   const editTodo = (id: string, text: string) =>
-    setTodos((prev) => prev.map((t) => (t.id === id ? { ...t, text } : t)));
+    setTodos((list) => list.map((t) => (t.id === id ? { ...t, text } : t)));
 
   const moveTodo = (id: string, direction: "up" | "down") => {
     setSortBy(null);
-    setTodos((prev) => {
-      const index = prev.findIndex((t) => t.id === id);
-      if (index === -1) return prev;
+    setTodos((list) => {
+      const index = list.findIndex((t) => t.id === id);
+      if (index === -1) return list;
 
-      const newTodos = [...prev];
+      const newTodos = [...list];
       if (direction === "up" && index > 0) {
         [newTodos[index - 1], newTodos[index]] = [newTodos[index], newTodos[index - 1]];
       }
-      if (direction === "down" && index < prev.length - 1) {
+      if (direction === "down" && index < list.length - 1) {
         [newTodos[index + 1], newTodos[index]] = [newTodos[index], newTodos[index + 1]];
       }
 
