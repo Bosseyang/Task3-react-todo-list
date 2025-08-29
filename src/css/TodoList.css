@@ -31,3 +31,19 @@
   padding: 1rem;
   gap: 1rem;
 }
+
+@media screen and (max-width: 920px) {
+  .todo-list {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .todo-list {
+    padding: 0;
+  }
+  .todo-items-list {
+    padding: 0.5rem;
+  }
+
+}
