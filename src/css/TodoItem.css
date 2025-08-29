@@ -42,3 +42,41 @@
   color: rgba(0, 0, 0, 0.65);
   padding-top: 0.5rem;
 }
+
+@media screen and (max-width: 768px) {
+  .todo-item {
+    width: 100%;
+  }
+  .todo-wrapper {
+    gap: 0.5rem;
+  }
+
+  .todo-controls-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .button.arrow-up-button {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .button.arrow-down-button {
+    grid-column: 2;
+  }
+  .button.remove-button {
+    grid-column: 1;
+  }
+
+  .edit-input-text {
+    min-width: 100%;
+    max-width: 240px;
+
+    min-height: 25px;
+    max-height: 60px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .todo-item {
+    padding: 0.5rem;
+  }
+}
