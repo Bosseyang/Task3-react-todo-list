@@ -4,7 +4,7 @@ import { loadTodos, saveTodos } from "./storage";
 
 export const useTodos = () => {
   const [todos, setTodos] = useState<ITodo[]>([]);
-  const [sortBy, setSortBy] = useState<"date" | "author" | null>("date");
+  const [sortBy, setSortBy] = useState<"date" | "author" | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -21,12 +21,9 @@ export const useTodos = () => {
   const addTodo = (todo: ITodo) => setTodos((prev) => [...prev, todo]);
 
   const toggleTodo = (id: string) =>
-    setTodos((prev) =>
-      prev.map((t) => (t.id === id ? { ...t, completed: !t.completed } : t))
-    );
+    setTodos((prev) => prev.map((t) => (t.id === id ? { ...t, completed: !t.completed } : t)));
 
-  const removeTodo = (id: string) =>
-    setTodos((prev) => prev.filter((t) => t.id !== id));
+  const removeTodo = (id: string) => setTodos((prev) => prev.filter((t) => t.id !== id));
 
   const editTodo = (id: string, text: string) =>
     setTodos((prev) => prev.map((t) => (t.id === id ? { ...t, text } : t)));
@@ -39,16 +36,10 @@ export const useTodos = () => {
 
       const newTodos = [...prev];
       if (direction === "up" && index > 0) {
-        [newTodos[index - 1], newTodos[index]] = [
-          newTodos[index],
-          newTodos[index - 1],
-        ];
+        [newTodos[index - 1], newTodos[index]] = [newTodos[index], newTodos[index - 1]];
       }
       if (direction === "down" && index < prev.length - 1) {
-        [newTodos[index + 1], newTodos[index]] = [
-          newTodos[index],
-          newTodos[index + 1],
-        ];
+        [newTodos[index + 1], newTodos[index]] = [newTodos[index], newTodos[index + 1]];
       }
 
       return newTodos;
