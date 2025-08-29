@@ -6,8 +6,8 @@ interface IAddTodoProps {
 }
 
 export const AddTodo: React.FC<IAddTodoProps> = ({ onAdd }) => {
-  const [text, setText] = useState("");
-  const [author, setAuthor] = useState("");
+  const [text, setText] = useState<string>("");
+  const [author, setAuthor] = useState<string>("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,7 +29,6 @@ export const AddTodo: React.FC<IAddTodoProps> = ({ onAdd }) => {
   return (
     <section className="add-todo">
       <form onSubmit={handleSubmit} className="add-todo-form">
-        {/* <input type="text" className="text-input" placeholder="Todo" /> */}
         <div className="add-todo-wrapper">
           <textarea
             className="text-input"
