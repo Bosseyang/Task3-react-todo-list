@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type FormEventHandler } from "react";
 import type { ITodo } from "../types";
 
 interface IAddTodoProps {
@@ -9,7 +9,7 @@ export const AddTodo: React.FC<IAddTodoProps> = ({ onAdd }) => {
   const [text, setText] = useState<string>("");
   const [author, setAuthor] = useState<string>("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit: FormEventHandler = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!text.trim() || !author.trim()) return;
