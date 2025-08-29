@@ -32,3 +32,40 @@
   min-width: 12rem;
   max-width: 400px;
 }
+
+.add-todo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media screen and (max-width: 920px) {
+}
+
+@media screen and (max-width: 480px) {
+  .add-todo {
+    padding: 0.5rem;
+  }
+  .add-todo-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 0.5rem;
+  }
+  .add-todo-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .text-input {
+    min-height: 2rem;
+    max-height: 140px;
+
+    min-width: 50px;
+    max-width: 100%;
+  }
+}
