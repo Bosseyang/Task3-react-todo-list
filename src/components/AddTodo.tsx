@@ -35,6 +35,7 @@ export const AddTodo: React.FC<IAddTodoProps> = ({ onAdd }) => {
             placeholder="Todo"
             value={text}
             onChange={(e) => setText(e.target.value)}
+            required
           />
           <input
             type="text"
@@ -42,6 +43,7 @@ export const AddTodo: React.FC<IAddTodoProps> = ({ onAdd }) => {
             placeholder="Author"
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
+            required
           />
         </div>
         <button className="button add-todo-button" type="submit">
