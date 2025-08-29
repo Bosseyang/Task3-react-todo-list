@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { ITodo } from "../types";
 import { TodoItemControls } from "./TodoItemControls";
+import { CheckboxButton } from "./CheckboxButton";
 
 interface ITodoItemProps {
   todo: ITodo;
@@ -29,15 +30,7 @@ export const TodoItem: React.FC<ITodoItemProps> = ({
   return (
     <li className="todo-item">
       <div className="todo-wrapper">
-        <button className="button todo-checkbox-button" onClick={() => onToggle(todo.id)}>
-          {todo.completed ? (
-            <span className="check-box material-symbols-outlined">check_box</span>
-          ) : (
-            <span className="check-box-blank material-symbols-outlined">
-              check_box_outline_blank
-            </span>
-          )}
-        </button>
+        <CheckboxButton id={todo.id} onToggle={onToggle} completed={todo.completed} />
         <div className="todo-text-wrapper">
           {isEditing ? (
             <textarea
