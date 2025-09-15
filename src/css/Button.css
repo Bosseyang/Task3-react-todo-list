@@ -28,6 +28,7 @@
   color: black;
   font-variation-settings: "FILL" 0;
 }
+
 .button:hover {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 1);
@@ -59,6 +60,7 @@
   background-color: rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
+
 .button.gray2 {
   background-color: rgba(255, 255, 255, 0.7);
 }
