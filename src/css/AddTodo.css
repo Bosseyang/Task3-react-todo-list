@@ -8,6 +8,7 @@
 
   box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.4);
 }
+
 .add-todo-form {
   display: flex;
   justify-content: center;
@@ -47,6 +48,7 @@
   .add-todo {
     padding: 0.5rem;
   }
+
   .add-todo-form {
     display: flex;
     flex-direction: column;
@@ -55,12 +57,14 @@
 
     gap: 0.5rem;
   }
+
   .add-todo-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 0.5rem;
   }
+
   .text-input {
     min-height: 2rem;
     max-height: 140px;
