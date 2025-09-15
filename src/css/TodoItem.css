@@ -47,6 +47,7 @@
   .todo-item {
     width: 100%;
   }
+
   .todo-wrapper {
     gap: 0.5rem;
   }
@@ -56,13 +57,16 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
   }
+
   .button.arrow-up-button {
     grid-column: 2;
     grid-row: 1;
   }
+
   .button.arrow-down-button {
     grid-column: 2;
   }
+
   .button.remove-button {
     grid-column: 1;
   }
@@ -75,6 +79,7 @@
     max-height: 60px;
   }
 }
+
 @media screen and (max-width: 480px) {
   .todo-item {
     padding: 0.5rem;
